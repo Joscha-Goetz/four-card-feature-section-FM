@@ -145,3 +145,20 @@ img {
   bottom: 2rem;
   right: 2rem;
 }
+
+@media (max-width: 1150px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+  .text-box {
+    /* position */
+    margin-top: 0;
+    width: 100%;
+  }
+  .main {
+    grid-template-rows: 1fr 4fr;
+  }
+}
