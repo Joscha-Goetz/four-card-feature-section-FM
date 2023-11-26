@@ -3,7 +3,7 @@
 *, *::before, *::after{box-sizing: border-box;}
 img, picture, svg, video {display: block;max-width: 100%;}
 input, textarea, button, select {font: inherit;}
-* {margin: 0;padding: 0;font: inherit;}
+* {margin: 0;padding: 0;font: inherit;overflow: hidden;}
 body{min-height: 100vh;}
 
 .attribution { font-size: 11px; text-align: center; position: absolute; bottom: 1rem; right: 0; left: 0;}
@@ -56,7 +56,6 @@ h1 {
 }
 /* *wrapper */
 .wrapper {
-  background-color: red;
   /* vorbereitung absolute */
   position: relative;
   /* margin */
@@ -65,28 +64,62 @@ h1 {
   margin-bottom: 5.0625rem;
   margin-top: .3125rem;
 }
+/* *grids */
 .vertical-grid, .horizontal-grid {
+  /* übereinanderlegen */
   position: absolute;
+  /* cards außeinander */
   display: flex;
   justify-content: space-between;
+  /* card-dimensions */
+  --card-height: 15.75rem;
+  --card-width: 22rem;
 }.vertical-grid {
+  /* positioning and dimensions */
   flex-direction: column;
-  width: 22rem;
+  width: var(--card-width);
   left: 50%;
   transform: translateX(-50%);
   height: 100%;
 }
 .horizontal-grid {
+  /* positioning and dimensions */
   position: absolute;
-  height: 15.75rem;
+  height: var(--card-height);
   width: 100%;
   top: 50%;
   transform: translateY(-50%);
 }
+/* *cards */
 .card {
-  width: 22rem;
-  height: 15.75rem;
-  background-color: blue;
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+}
+.card .text{
+  padding: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+.card p {
+  font-weight: 200;
+}
+.top-line {
+  height: .25rem;
+  width: 100%;
+}
+#cyan > .top-line {
+  background-color: var(--cyan);
+}
+#red > .top-line {
+  background-color: var(--red);
+}
+#blue > .top-line {
+  background-color: var(--blue);
+}
+#orange > .top-line {
+  background-color: var(--orange);
 }
 
 /* *misc */
@@ -95,4 +128,12 @@ h1 {
 }
 .thin {
   font-weight: 200;
+}
+.medium {
+  font-weight: 400;
+}
+img {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 }
